@@ -1,0 +1,219 @@
+/* .trs {
+    font-family: sans-serif;
+    margin: 20px auto; /* Center horizontally 
+    width: 100vw; /* 90% of the viewport width (approximately 371px on S20 Ultra) 
+    max-width: 960px; /* Optional: Maximum width for larger screens 
+    height: fit-content;
+    box-sizing: border-box; /* Include padding/border in width 
+    display: flex; /* For centering the slider-container 
+    flex-direction: column;
+    align-items: center; /* Center slider-container horizontally 
+    position: relative; /* For the controls 
+    padding: 0 10px; /* Add some horizontal padding to the .trs element itself 
+}
+
+.slider-container {
+    width: 100%; /* Take full width of .trs 
+    display: flex;
+    justify-content: flex-start; /* Align slides to the left 
+    align-items: center;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 8px;
+    box-sizing: border-box; /* Include padding/border in width 
+    position: relative;
+}
+
+.slider2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: calc(100% / 3); /* Initial width for showing 3 
+}
+
+.slide img {
+    border-radius: 5%;
+    width: 80%;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.slide .caption {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    width: 80%;
+    height: 80px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.controls button {
+    padding: 8px 0px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 5.5em;
+    font-family: monospace;
+    color: #ff3902;
+    background-color: transparent;
+    transition: 0.25s;
+    pointer-events: auto;
+    margin: 0 10px;
+}
+
+.controls button:hover {
+    color: #c50202;
+    transition: 0.5s;
+}
+
+.prev-btn:disabled,
+.next-btn:disabled,
+.prev-btn:disabled:hover,
+.next-btn:disabled:hover {
+    color: rgba(255, 57, 2, 0.3);
+    cursor: not-allowed;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Adjust styles for smaller screens if needed 
+@media (max-width: 768px) {
+    .trs {
+        width: 95vw; /* Adjust width for smaller viewports 
+    }
+    .slide {
+        width: 100%; /* Show one slide at a time on smaller screens by default 
+    }
+} */
+
+/* Wrapper for slider and arrows */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: sans-serif;
+  }
+  
+  .trs {
+    width: 90%;
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+  }
+  
+  .slider-wrapper {
+    position: relative;
+    padding: 0 60px; /* leaves space for arrows */
+  }
+  
+  .slider-container {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    flex: 0 0 calc(100% / 3);
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .caption {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    height: 60px;
+    overflow: hidden;
+  }
+  
+  /* Controls */
+  .controls {
+    position: absolute;
+    top: 0;
+    bottom: 60px; /* roughly caption height */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    padding: 0px 5px;
+  }
+  
+  .controls button {
+    pointer-events: auto;
+    font-size: clamp(2rem, 10vw, 4rem);
+    background: none;
+    border: none;
+    color: #ff3902;
+    font-family: monospace;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0 10px;
+  }
+  
+  .controls button:hover {
+    color: #c50202;
+  }
+  
+  .prev-btn:disabled,
+  .next-btn:disabled {
+    color: rgba(255, 57, 2, 0.3);
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 768px) {
+    .trs{
+        width: 95%;
+        max-width: 93vw;
+    }
+    .slider-wrapper {
+      padding: 0 30px;
+    }
+  
+    .controls button {
+      font-size: 2rem;
+    }
+  }
+  

@@ -1,0 +1,126 @@
+/* CSS for the FAQ-style dropdown, wrapped in a more specific class */
+        .achievements-dropdown-wrapper .faq-section-container {
+            width: 100%;
+            max-width: 600px; /* Max width for a typical FAQ section */
+            margin: 20px auto; /* Center the container and add some top/bottom margin */
+            border-radius: 8px;
+            background-color: #ffffff; /* White background for the entire section */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Ensures rounded corners apply correctly to inner content */
+        }
+
+        .achievements-dropdown-wrapper .faq-toggle-button {
+            width: 100%;
+            padding: 15px 20px;
+            background-color: #e2e8f0; /* Lighter background for FAQ header */
+            color: #2d3748; /* Dark text for header */
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            outline: none;
+            border-bottom: 1px solid #cbd5e0; /* Separator line */
+        }
+
+        .achievements-dropdown-wrapper .faq-toggle-button:hover {
+            background-color: #cbd5e0; /* Slightly darker on hover */
+        }
+
+        .achievements-dropdown-wrapper .arrow-icon {
+            width: 20px; /* Slightly larger arrow */
+            height: 20px;
+            transition: transform 0.3s ease;
+            color: #4a5568; /* Darker arrow color */
+        }
+
+        .achievements-dropdown-wrapper .arrow-icon.rotate {
+            transform: rotate(180deg);
+        }
+
+        .achievements-dropdown-wrapper .faq-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            background-color: #ffffff; /* Content background */
+            padding: 0 20px; /* Initial padding */
+            transition: max-height 0.6s ease-in-out, opacity 0.5s ease-out; /* Adjusted transition for smoother feel */
+
+            /* Flexbox for column layout of image items (for individual items if not sliders) */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+        }
+
+        .achievements-dropdown-wrapper .faq-content.show {
+            max-height: 3000px !important; /* Increased max-height, added !important for debugging */
+            opacity: 1 !important; /* Added !important for debugging */
+            padding-top: 20px; /* Padding when content is shown */
+            padding-bottom: 20px;
+        }
+
+        /* Styling for individual image items and captions within the FAQ content */
+        /* Note: Your existing .achievement-images-container styles might override/complement these */
+        .achievements-dropdown-wrapper .image-item { /* This style is for simple image-caption pairs, adjust if your sliders need specific layout */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 12px; /* Slightly more padding */
+            background-color: #f7fafc; /* Lighter background for each item */
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            width: 100%; /* Take full width within faq-content padding */
+            max-width: 250px; /* Max width for individual image item for better stacking */
+            margin-bottom: 15px; /* Space between items */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        .achievements-dropdown-wrapper .image-item:last-child {
+            margin-bottom: 0; /* No margin for the last item */
+        }
+
+        .achievements-dropdown-wrapper .image-item img {
+            width: 120px; /* Slightly larger image size */
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .achievements-dropdown-wrapper .image-item caption {
+            font-size: 1em; /* Slightly larger font size */
+            color: #4a5568;
+            line-height: 1.4;
+        }
+
+        /* Basic body styling to ensure the dropdown is visible */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column; /* Allow vertical stacking of header and dropdown */
+            justify-content: flex-start;
+            align-items: center; /* Center content horizontally */
+            min-height: 100vh;
+            padding: 0; /* Remove body padding to let navbar stretch */
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* Adjustments for your existing layout to fit the FAQ */
+        .navbar {
+            width: 100%; /* Ensure navbar takes full width */
+            /* Add any other necessary navbar styles from your style.css if not already there */
+        }
+        .nav-fixed-position-adjustment {
+            /* This div is likely used to push content down if navbar is fixed. Adjust height as needed. */
+            height: 120px; /* Example height, adjust to match your navbar's height */
+            width: 100%;
+        }
+        /* Ensure your existing .achievement-images-container and .achievements-img-caption styles are compatible */
+        /* If sliders are not working, check their specific CSS and JS from img_slider.css */

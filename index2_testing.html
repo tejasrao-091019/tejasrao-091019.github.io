@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ Dropdown Animation</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="img_slider.css">
+  <link rel="stylesheet" href="styleII.css">
+  <!-- <link rel="stylesheet" href="faq_styling.css"> -->
+  <style>
+    .faq-container {
+      width: 100%;
+      max-width: 800px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .faq-toggle {
+      cursor: pointer;
+      padding: 1rem 1.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: #4e73df;
+      color: white;
+      border: none;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .arrow {
+      display: inline-block;
+      transition: transform 0.4s ease;
+    }
+
+    .arrow.rotate {
+      transform: rotate(180deg);
+    }
+
+    .content-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.8s ease, opacity 0.6s ease;
+    }
+
+    .content-wrapper.open {
+      max-height: 5000px;
+      opacity: 1;
+    }
+
+    .image-list {
+      padding: 1.5rem;
+      background: #fff;
+      animation: fadeSlide 0.6s ease-in-out;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .achievements-images-container {
+      margin-bottom: 1.2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .achievements-images-container:hover {
+      transform: scale(1.01);
+    }
+
+    .achievements-images-container img {
+      width: 100%;
+      border-radius: 8px;
+      height: auto;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .achievements-img-caption {
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="faq-container">
+    <button class="faq-toggle" id="toggleBtn">
+      Click to view 50 images with captions
+      <span class="arrow" id="arrow">&#9660;</span>
+    </button>
+    <div class="content-wrapper" id="faqContent">
+      <div class="image-list">
+        <h1 class="achievements-heading">ACHIEVEMENTS IN STD 10TH</h1>
+
+            <!-- <div class="achievement-images-container portrait-image">
+        <img src="media/Achievements/10th/Salcete U17 Boys Inter-school Cricket Tournament-edited 31-03-2025.png" class="achievement-images portrait-image">
+        <p class="achievements-img-caption">Akshit was part of the school team that defeated Damodar English High School & won the Salcete Taluka U17 Boys Inter-school Cricket Tournament organised by DSYA</p>
+    </div> -->
+                 <div class="achievement-images-container">
+                <div class="slider landscape-slider" id="slider-19">
+                    <div class="list">
+                        <div class="item">
+                            <img src="media/Achievements/10th/Talexpo 2024/Talexpo @ Hedgewar HS 3-10-24(1).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/Talexpo 2024/Talexpo @ Hedgewar HS 3-10-24(2).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="prev">
+                            <</button>
+                                <button class="next">></button>
+
+                    </div>
+                    <ul class="dots"></ul>
+                </div>
+                <p class="achievements-img-caption">**ADD MORE IMGS FROM WA GROUP** Talexpo 2024 @ Dr KB Hedgewar HS,
+                    Cujira- School Runners Up- 1st: Whistling- Yudhaan & 1st: Memory Test- Aditi, Participant- Tejas- fb
+                    03/10/2024 --Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eaque suscipit
+                    molestiae voluptates rem perspiciatis. Atque vitae, sit quod aliquam, aspernatur provident magni,
+                    necessitatibus ipsa tenetur obcaecati harum architecto voluptates?</p>
+            </div>
+            <div class="achievement-images-container">
+                <div class="slider landscape-slider" id="slider-18">
+                    <div class="list">
+                        <div class="item">
+                            <img src="media/Achievements/10th/Swami Samarth Ghumath Aarti 28-9-24(1).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/Swami Samarth Ghumath Aarti 28-9-24(2).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/Swami Samarth Ghumath Aarti 28-9-24(3).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/Swami Samarth Ghumath Aarti 28-9-24(4).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="prev">
+                            <</button>
+                                <button class="next">></button>
+
+                    </div>
+                    <ul class="dots"></ul>
+                </div>
+                <p class="achievements-img-caption">Ghumath Aarti competition organised by Shri Swami Samarth Sarvajanik
+                    Ganeshotsav Samiti, Samarth Gad, Davorlim- 1st: Yudhaan & Aneeveesha- fb 28/09/2024 --Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Dolorum eaque suscipit molestiae voluptates rem
+                    perspiciatis. Atque vitae, sit quod aliquam, aspernatur provident magni, necessitatibus ipsa tenetur
+                    obcaecati harum architecto voluptates?</p>
+            </div>
+            <div class="achievement-images-container">
+                <div class="slider landscape-slider" id="slider-17">
+                    <div class="list">
+                        <div class="item">
+                            <img src="media/Achievements/10th/Sanskrit Samaroh@Popular HS 1-9-24(1).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/Sanskrit Samaroh@Popular HS 1-9-24(2) --edited.jpg"
+                                alt="Achievements slider images">
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="prev">
+                            <</button>
+                                <button class="next">></button>
+
+                    </div>
+                    <ul class="dots"></ul>
+                </div>
+                <p class="achievements-img-caption">sanskrit Samaroh @ Popular HS- Sanskrit Kathakathan- 3rd: Tejas; 1st
+                    Consolation: Aditi- fb 01/09/2024 --Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                    eaque suscipit molestiae voluptates rem perspiciatis. Atque vitae, sit quod aliquam, aspernatur
+                    provident magni, necessitatibus ipsa tenetur obcaecati harum architecto voluptates?</p>
+            </div>
+            <div class="achievement-images-container">
+                <div class="slider landscape-slider" id="slider-16">
+                    <div class="list">
+                        <div class="item">
+                            <img src="media/Achievements/10th/3rangam @ Loyola/3 rangam org by Loyola HS 28-8-24(1).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/3rangam @ Loyola/3 rangam org by Loyola HS 28-8-24(2).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/3rangam @ Loyola/3 rangam org by Loyola HS 28-8-24(3).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/3rangam @ Loyola/3 rangam org by Loyola HS 28-8-24(4).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/3rangam @ Loyola/3 rangam org by Loyola HS 28-8-24(5).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="prev">
+                            <</button>
+                                <button class="next">></button>
+
+                    </div>
+                    <ul class="dots"></ul>
+                </div>
+                <p class="achievements-img-caption">3rangam organised at Loyola HS- Overall 1st, 1st:
+                    Rangamanch(drama)-Prapti; 1st: Samaychakra(hurdle race); 1st: Swadotsav(Cooking comp)-Shreesha &
+                    Mamta- fb 28/08/2024 --Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eaque
+                    suscipit molestiae voluptates rem perspiciatis. Atque vitae, sit quod aliquam, aspernatur provident
+                    magni, necessitatibus ipsa tenetur obcaecati harum architecto voluptates?</p>
+            </div>
+            <div class="achievement-images-container">
+                <img src="media/Achievements/10th/Goa Quiz 23-8-2024.jpg" class="achievement-images portrait-image">
+                <p class="achievements-img-caption">Goa Quiz org by Goa konkani academy On occasion of Konk national
+                    recognition day- 2nd- Yudhaan- 21-08-2024 WA & 23-08-2024 FB --Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Rem beatae tenetur autem enim omnis iste assumenda, dolore cum?
+                    Aliquid quidem ducimus rerum suscipit distinctio explicabo architecto harum, perspiciatis facere
+                    voluptas!</p>
+            </div>
+            <div class="achievement-images-container">
+                <div class="slider landscape-slider" id="slider-15">
+                    <div class="list">
+                        <div class="item">
+                            <img src="media/Achievements/10th/Inter school U17 Boys TT State champs 10-8-24(1).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/Inter school U17 Boys TT State champs 10-8-24(2) --edited.jpg"
+                                alt="Achievements slider images">
+                        </div>
+                        <div class="item">
+                            <img src="media/Achievements/10th/Inter school U17 Boys TT State champs 10-8-24(3).jpg"
+                                alt="Achievements slider images">
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="prev">
+                            <</button>
+                                <button class="next">></button>
+
+                    </div>
+                    <ul class="dots"></ul>
+                </div>
+                <p class="achievements-img-caption">Inter School Boys U17 TT- State Champs- Yudhaan & Atharv- fb
+                    08/07/2024 --Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eaque suscipit
+                    molestiae voluptates rem perspiciatis. Atque vitae, sit quod aliquam, aspernatur provident magni,
+                    necessitatibus ipsa tenetur obcaecati harum architecto voluptates?</p>
+            </div>
+            <div class="achievement-images-container">
+                <img src="media/Achievements/10th/Inter school U17 Boys TT South Goa champs 20-07-24.jpg"
+                    class="achievement-images portrait-image">
+                <p class="achievements-img-caption">Inter school U17 TT Boys- South Goa Champs- Yudhaan & Atharv- FB
+                    20-07-2024 --Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem beatae tenetur autem enim
+                    omnis iste assumenda, dolore cum? Aliquid quidem ducimus rerum suscipit distinctio explicabo
+                    architecto harum, perspiciatis facere voluptas!</p>
+            </div>
+            <div class="achievement-images-container">
+                <img src="media/Achievements/10th/Inter school U17 Badminton Girls 3rd Taluka 19-07-24.jpg"
+                    class="achievement-images portrait-image">
+                <p class="achievements-img-caption">Inter school U17 Badminton Girls- 3rd @ Taluka- Debita- 16/07/2024
+                    WA & FB 19-07-2024 --Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem beatae tenetur
+                    autem enim omnis iste assumenda, dolore cum? Aliquid quidem ducimus rerum suscipit distinctio
+                    explicabo architecto harum, perspiciatis facere voluptas!</p>
+            </div>
+            <div class="achievement-images-container">
+                <img src="media/Achievements/10th/Inter school U17 TT Boys Taluka Winners 16-07-24.jpg"
+                    class="achievement-images portrait-image">
+                <p class="achievements-img-caption">Inter school U17 TT Boys- Taluka Winners- Yudhaan & Atharv-
+                    09-07-2024 WA & FB 16-07-2024 --Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem beatae
+                    tenetur autem enim omnis iste assumenda, dolore cum? Aliquid quidem ducimus rerum suscipit
+                    distinctio explicabo architecto harum, perspiciatis facere voluptas!</p>
+            </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const content = document.getElementById('faqContent');
+    const arrow = document.getElementById('arrow');
+
+    toggleBtn.addEventListener('click', () => {
+      content.classList.toggle('open');
+      arrow.classList.toggle('rotate');
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+

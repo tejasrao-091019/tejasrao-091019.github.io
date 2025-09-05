@@ -1,0 +1,206 @@
+.slider{
+    /* width: 100%; */
+    /* max-width: 100vw; */
+    /* height: 400px; */
+    /* object-fit: contain; */
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+}
+
+.landscape-slider{
+    width: 720px;
+    height: 400px;
+    /* width: fit-content; */
+    /* height: 700px;  */
+}
+
+.portrait-slider{
+    width: 600px;
+    height: 500px;
+}
+
+.slider .list{
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    left: 0; 
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+
+/* .img-landscape{
+    width: 700px;
+    /* height: auto; */
+    /* max-width: 100vw; */
+    /* height: 700px; 
+    object-fit: cover;
+}
+.img-portrait{
+    width: 600px;
+    /* max-width: 100vw; */
+    /* height: 700px; 
+    object-fit: cover;
+} */
+
+.slider .list .item{
+    flex-shrink: 0;
+    width: 700px; /* Match the slider's max-width */
+    height: 100%; /* Ensure each item takes the full slider height */
+    display: flex; /* Optional: To center the image within the item if needed */
+    justify-content: center; /* Optional: Center horizontally */
+    align-items: center; /* Optional: Center vertically */
+    /* background-color: gray; */
+    background-color: rgb(63, 63, 63);
+}
+
+.slider .list .item img{
+    /* Remove fixed widths and heights */
+    max-width: 100%; /* Ensure image doesn't exceed item width */
+    max-height: 100%; /* Ensure image doesn't exceed item height */
+    display: block; /* Prevent extra space below inline images */
+     object-fit: cover; /* Key property for fitting images without cropping */
+    width: 100%;
+    height: auto;
+}
+
+.buttons{
+    position: absolute;
+    top: 0; /* Anchor buttons to the top of the slider */
+    left: 0;
+    width: 100%;
+    height: 100%; /* Make the buttons container span the full height */
+    display: flex;
+    justify-content: space-between; /* Puts space between the buttons */
+    /* align-items: center; Vertically centers the items */
+    padding: 0 0px; /* Add some padding on the left and right for spacing */
+    /* box-sizing: border-box; Include padding in the element's total width and height */
+}
+
+/* .slider .buttons button{ */
+.prev, .next{
+    width: 70px;
+    height: 100%;
+    border: none;
+    /* border-radius: 50%; */
+    /* box-shadow: 0px 0px 20px 0px #828282; */
+    background-color: rgba(0, 0, 0, 0);
+    /* border: 2px solid rgba(0, 0, 0, 0.5); */
+    /* text-shadow: 10px 10px 10px 10px #ec0f0f; */
+    font-size: 70px;
+    color: #fff;
+    font-family: monospace;
+    transition: 0.25s;
+    /* font-weight: bold; */
+    cursor: pointer;
+    /* border: 2px solid rgba(0, 0, 0, 0.5); */
+}
+
+.slider .buttons button:hover{
+    /* background-color: #cfcfcf; */
+    color: red;
+    transition: 0.25s;
+}
+
+.slider .dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+.slider .dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.slider .dots li:hover{
+    background-color: #a7a7a7;
+}
+.slider .dots li.active{
+    width: 30px;
+}
+
+#prev, #next{
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#slider-1{
+    width: 710px;
+    height: 520px;
+}
+
+#slider-4{
+    width: 720px;
+    height: 420px;
+}
+
+#slider-5{
+    width: 720px;
+    height: 470px;
+}
+
+#slider-6{
+    width: 720px;
+    height: 470px;
+}
+
+#slider-7{
+    width: 720px;
+    height: 770px;
+}
+
+#slider-8{
+    width: 720px;
+    height: 770px;
+}
+
+#slider-9{
+    width: 720px;
+    height: 390px;
+}
+
+#slider-10{
+    width: 720px;
+    height: 800px;
+}
+
+#slider-15{
+    width: 720px;
+    height: 470px;
+}
+
+#slider-16{
+    width: 720px;
+    height: 600px;
+}
+
+#slider-17{
+    width: 720px;
+    height: 400px;
+}
+
+/* #slider-18{
+    width: 720px;
+    height: 400px;
+}
+
+#slider-19{
+    width: 720px;
+    height: 400px;
+} */
